@@ -1,0 +1,188 @@
+/* General Styles */
+body {
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  
+}
+
+/* Container for login */
+.login-page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+/* Header Styling */
+.login-page-header {
+  background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+  color: white;
+  width: 100%;
+  padding: 15px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(43, 88, 118, 0.2);
+}
+
+.login-page-header-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+
+/* Aligning logo and title side by side */
+.login-page-header-content {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between logo and text */
+}
+
+.login-page-college-logo {
+  width: 80px;
+  height: auto;
+}
+
+.login-page-college-title-container {
+  text-align: left;
+}
+
+.login-page-college-title-container h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.login-page-college-title-container p {
+  font-size: 14px;
+  margin: 5px 0 0;
+}
+
+/* Lab Performance System Text */
+.login-page-evaluation-text {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+.login-page-evaluation-text:hover {
+  text-decoration: underline;
+}
+
+/* Login Box */
+.login-page-card {
+  width: 380px;
+  max-width: 100%;
+  background: rgba(240, 240, 240, 0.95);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 120px; /* Ensuring it does not overlap with the header */
+}
+/* Add this to your existing CSS */
+.login-page-card h2 {
+  color: #2b5876; /* Using the same blue from your gradient */
+  font-size: 28px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* Input Fields */
+.login-page-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.login-page-input-icon {
+  color:#2b5876; /* Deep Purple */
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.login-page-input-field {
+  flex: 1;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Eye Button */
+.login-page-eye-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #2b5876; /* Deep Purple */
+}
+
+.login-page-eye-button:hover {
+  color: #4e4376;
+}
+
+/* Button */
+.login-page-button {
+  background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+  border: none;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(43, 88, 118, 0.2);
+  transition: background 0.3s ease;
+}
+
+.login-page-button:hover {
+  background-color: linear-gradient(135deg, #1a4766 0%, #3d3366 100%);
+}
+
+/* Error Message */
+.login-page-error-message {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Footer */
+.login-page-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  box-shadow: 0 -2px 10px rgba(43, 88, 118, 0.2);
+}

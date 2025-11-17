@@ -1,0 +1,189 @@
+/* Faculty Dashboard Styles */
+.faculty-dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f2f5; /* Soft grey background */
+}
+
+/* Header Styles */
+.faculty-header {
+  background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%); /* Deep blue to purple gradient */
+  color: white;
+  width: 100%;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faculty-header-container {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.faculty-header-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.faculty-college-logo {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+.faculty-college-title-container h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.faculty-college-title-container p {
+  font-size: 14px;
+  margin: 5px 0 0;
+  opacity: 0.9;
+}
+
+.faculty-evaluation-text {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  margin-right: 30px;
+}
+
+/* Main Content Styles */
+.faculty-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #ffffff;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.faculty-title {
+  font-size: 2.5rem;
+  color: #4a2c82;
+  text-shadow: none;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #2b5876, #4e4376);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.faculty-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.faculty-btn {
+  background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+  color: white;
+  border: none;
+  padding: 1.25rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(43, 88, 118, 0.3);
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.faculty-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(43, 88, 118, 0.4);
+  background: linear-gradient(135deg, #1a4766 0%, #3d3366 100%);
+}
+
+.faculty-btn:active {
+  transform: translateY(0);
+}
+
+.faculty-btn-primary {
+  background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+  color: white;
+}
+
+.faculty-btn-secondary {
+  background: white;
+  color: #2b5876;
+  border: 2px solid #2b5876;
+}
+
+.faculty-btn-secondary:hover {
+  background: rgba(43, 88, 118, 0.1);
+}
+
+/* Footer Styles */
+.faculty-footer {
+  background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%); /* Matching the header */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Animation */
+@keyframes faculty-fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faculty-animate {
+  animation: faculty-fadeIn 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faculty-title {
+    font-size: 2rem;
+  }
+  
+  .faculty-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .faculty-main-content {
+    margin: 10px;
+    padding: 1.5rem;
+  }
+
+  .faculty-header-container {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .faculty-header-content {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .faculty-college-logo {
+    width: 60px;
+  }
+
+  .faculty-evaluation-text {
+    margin-right: 0;
+  }
+}

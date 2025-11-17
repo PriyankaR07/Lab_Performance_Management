@@ -1,0 +1,295 @@
+/* Font imports (add to HTML head) */
+/* <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> */
+
+/* Color Variables */
+:root {
+   --primary: #4361ee;
+   --primary-dark: #3a56d4;
+   --success: #4cc9f0;
+   --danger: #f72585;
+   --warning: #f8961e;
+   --light: #f8f9fa;
+   --dark: #212529;
+   --gray: #6c757d;
+ }
+
+ 
+ /* General Styles */
+ .marksoverview-container {
+   font-family: 'Poppins', sans-serif;
+   padding: 2rem;
+   background-color: white;
+   border-radius: 16px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+   max-width: 1200px;
+   margin: 2rem auto;
+   transition: all 0.3s ease;
+   
+ }
+ 
+ .marksoverview-title {
+   text-align: center;
+   color: var(--dark);
+   margin-bottom: 2rem;
+   font-family: 'Merriweather', serif;
+   font-size: 2.5rem;
+   font-weight: 700;
+   position: relative;
+   padding-bottom: 1rem;
+ }
+ 
+ .marksoverview-title::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100px;
+   height: 4px;
+   background: linear-gradient(90deg, var(--primary), var(--success));
+   border-radius: 2px;
+   
+ }
+ 
+ .marksoverview-error {
+   color: var(--danger);
+   text-align: center;
+   margin-bottom: 2rem;
+   padding: 1rem;
+   background-color: rgba(247, 37, 133, 0.1);
+   border-radius: 8px;
+   border-left: 4px solid var(--danger);
+   font-weight: 500;
+ }
+ 
+ /* Table Styles - Modern Card-like Design */
+ .marksoverview-table {
+   width: 100%;
+   border-collapse: separate;
+   border-spacing: 0;
+   margin-bottom: 2rem;
+   background-color: white;
+   border-radius: 12px;
+   overflow: hidden;
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+ }
+ 
+ .marksoverview-table-header {
+   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+   color: white;
+   position: sticky;
+   top: 0;
+ }
+ 
+ .marksoverview-table th,
+ .marksoverview-table td {
+   padding: 1.2rem 1.5rem;
+   text-align: left;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+ }
+ 
+ .marksoverview-table th {
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+   font-size: 0.9rem;
+ }
+ 
+ .marksoverview-table tr:last-child td {
+   border-bottom: none;
+ }
+ 
+ .marksoverview-table tr:hover {
+   background-color: rgba(67, 97, 238, 0.03);
+   transform: translateY(-1px);
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+   transition: all 0.2s ease;
+ }
+ 
+ /* Action Buttons */
+ .marksoverview-table-actions {
+   display: flex;
+   gap: 0.5rem;
+ }
+ 
+ .marksoverview-table-button {
+   padding: 0.5rem 1rem;
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   font-size: 0.85rem;
+   font-weight: 500;
+   transition: all 0.2s ease;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   min-width: 70px;
+ }
+ 
+ .marksoverview-table-button-edit {
+   background-color: var(--success);
+   color: white;
+   box-shadow: 0 2px 5px rgba(76, 201, 240, 0.3);
+ }
+ 
+ .marksoverview-table-button-delete {
+   background-color: var(--danger);
+   color: white;
+   box-shadow: 0 2px 5px rgba(247, 37, 133, 0.3);
+ }
+ 
+ .marksoverview-table-button:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+   opacity: 1;
+ }
+ 
+ .marksoverview-table-button:active {
+   transform: translateY(0);
+ }
+ 
+ /* Edit Form Styles - Modern Card */
+ .marksoverview-edit-form {
+   background-color: white;
+   padding: 2rem;
+   border-radius: 12px;
+   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+   margin-top: 2rem;
+   border: 1px solid rgba(0, 0, 0, 0.05);
+ }
+ 
+ .marksoverview-edit-form-title {
+   margin-bottom: 1.5rem;
+   color: var(--dark);
+   font-size: 1.5rem;
+   font-weight: 600;
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+ }
+ 
+ .marksoverview-edit-form-title::before {
+   content: '';
+   display: block;
+   width: 5px;
+   height: 1.5rem;
+   background: linear-gradient(to bottom, var(--primary), var(--success));
+   border-radius: 3px;
+ }
+ 
+ .marksoverview-edit-form-label {
+   display: block;
+   margin-bottom: 0.8rem;
+   font-weight: 500;
+   color: var(--dark);
+   font-size: 0.95rem;
+ }
+ 
+ .marksoverview-edit-form-input {
+   width: 100%;
+   padding: 0.8rem 1rem;
+   margin-bottom: 1.2rem;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   border-radius: 8px;
+   font-size: 1rem;
+   transition: all 0.3s ease;
+   background-color: var(--light);
+ }
+ 
+ .marksoverview-edit-form-input:focus {
+   outline: none;
+   border-color: var(--primary);
+   box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+   background-color: white;
+ }
+ 
+ .marksoverview-edit-form-submit {
+   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+   color: white;
+   padding: 0.8rem 1.8rem;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   font-size: 1rem;
+   font-weight: 500;
+   transition: all 0.3s ease;
+   box-shadow: 0 2px 10px rgba(67, 97, 238, 0.3);
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+ }
+ 
+ .marksoverview-edit-form-submit:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(67, 97, 238, 0.4);
+ }
+ 
+ .marksoverview-edit-form-submit:active {
+   transform: translateY(0);
+ }
+ 
+ /* Back Button - Floating Style */
+ .marksoverview-back-button {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.5rem;
+   margin-top: 1.5rem;
+   padding: 0.8rem 1.5rem;
+   background: linear-gradient(135deg, var(--danger), #d11149);
+   color: white;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   font-size: 1rem;
+   font-weight: 500;
+   transition: all 0.3s ease;
+   box-shadow: 0 2px 10px rgba(247, 37, 133, 0.3);
+   position: relative;
+   overflow: hidden;
+ }
+ 
+ .marksoverview-back-button::before {
+   content: '←';
+   display: block;
+   transition: transform 0.3s ease;
+ }
+ 
+ .marksoverview-back-button:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 5px 15px rgba(247, 37, 133, 0.4);
+ }
+ 
+ .marksoverview-back-button:hover::before {
+   transform: translateX(-5px);
+ }
+ 
+ .marksoverview-back-button:active {
+   transform: translateY(0);
+ }
+ 
+ /* Responsive Design */
+ @media (max-width: 768px) {
+   .marksoverview-container {
+     padding: 1.5rem;
+     border-radius: 0;
+     margin: 0;
+   }
+   
+   .marksoverview-table {
+     display: block;
+     overflow-x: auto;
+   }
+   
+   .marksoverview-title {
+     font-size: 2rem;
+   }
+   
+   .marksoverview-table-actions {
+     flex-direction: column;
+     gap: 0.3rem;
+   }
+   
+   .marksoverview-table-button {
+     width: 100%;
+   }
+ }

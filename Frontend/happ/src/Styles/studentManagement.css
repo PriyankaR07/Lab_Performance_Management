@@ -1,0 +1,433 @@
+/* ========== MAIN CONTAINER & LAYOUT ========== */
+.student-management-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* ========== DASHBOARD STYLES ========== */
+.student-dashboard {
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.student-dashboard h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+/* ========== FORM CONTAINER ========== */
+.student-form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    max-width: 850px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.student-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+.student-form-container h2 {
+    color: #2c3e50;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    position: relative;
+}
+
+.student-form-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #4285f4;
+}
+
+/* ========== FORM LAYOUT ========== */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+    transition: all 0.3s;
+    background-color: #f8f9fa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 3px rgba(66,133,244,0.2);
+    background-color: white;
+}
+
+.form-group input::placeholder {
+    color: #adb5bd;
+    opacity: 1;
+}
+
+/* ========== BUTTON STYLES ========== */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #eee;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.action-group {
+    display: flex;
+    gap: 15px;
+}
+
+.student-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.student-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255,255,255,0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.student-btn:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
+
+/* Button Variants */
+.student-btn.save {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    box-shadow: 0 4px 6px rgba(40,167,69,0.3);
+}
+
+.student-btn.update {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    box-shadow: 0 4px 6px rgba(23,162,184,0.3);
+}
+
+.student-btn.delete {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    box-shadow: 0 4px 6px rgba(220,53,69,0.3);
+}
+
+.student-btn.reset {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    box-shadow: 0 4px 6px rgba(108,117,125,0.3);
+}
+
+.student-btn.back {
+    background: linear-gradient(135deg, #343a40 0%, #23272b 100%);
+    box-shadow: 0 4px 6px rgba(52,58,64,0.3);
+}
+
+/* Button States */
+.student-btn:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.student-btn:active {
+    transform: translateY(0);
+}
+
+.student-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ========== ERROR MESSAGES ========== */
+.error-message {
+    color: #721c24;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8d7da;
+    border-radius: 8px;
+    font-weight: 500;
+    border: 1px solid #f5c6cb;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.error-message::before {
+    content: '⚠';
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* ========== TABLE STYLES ========== */
+/* ========== TABLE STYLES ========== */
+.student-list-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.search-bar {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f8f9fa; /* Explicitly setting background color */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23818c99" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 16px;
+    color: #212529; /* Darker text color for better visibility */
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #4285f4;
+    box-shadow: 0 0 0 3px rgba(66,133,244,0.2);
+    background-color: white;
+}
+
+.search-bar input::placeholder {
+    color: #adb5bd;
+    opacity: 1;
+}.student-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 25px;
+}
+
+.student-table th, .student-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 15px;
+}
+
+.student-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+}
+
+.student-table tr:hover {
+    background-color: rgba(248,249,250,0.8);
+}
+
+.student-table tr:last-child td {
+    border-bottom: none;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* ========== LOADING STATES ========== */
+.loading-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 992px) {
+    .student-management-container {
+        padding: 15px;
+    }
+    
+    .student-form-container {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .student-form-container {
+        padding: 20px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .action-group {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .student-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .student-table th, 
+    .student-table td {
+        padding: 12px 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .student-management-container {
+        padding: 10px;
+    }
+    
+    .student-form-container {
+        padding: 18px;
+    }
+    
+    .student-btn {
+        width: 100%;
+        padding: 14px;
+    }
+    
+    .actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.student-form-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+.form-group {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+
+
+
+/* Delay animations for form groups */
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
+.form-group:nth-child(6) { animation-delay: 0.6s; }
+.manage-students h2{
+    color: #343a40;
+}
